@@ -61,7 +61,7 @@ class Utilities
 		return $output;
 	}
 
-    protected static function checkNationalCode($code = '')
+    public static function checkNationalCode($code = '')
     {
         $code = (string) preg_replace('/[^0-9]/', '', $code);
         if (strlen($code) > 10 or strlen($code) < 8) {
