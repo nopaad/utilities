@@ -60,4 +60,32 @@ class Utilities
 
 		return $output;
 	}
+
+    protected function checkNationalCode($code = '')
+    {
+        $code = (string) preg_replace('/[^0-9]/', '', $code);
+        if (strlen($code) > 10 or strlen($code) < 8) {
+            return false;
+        }
+        if (strlen($code) == 8) {
+            $code = "00" . $code;
+        }
+        if (strlen($code) == 9) {
+            $code = "0" . $code;
+        }
+        $list_code = str_split($code);
+        $last = (int) $list_code[9];
+        unset($list_code[9]);
+        $i = 10;
+        $sum = 0;
+        foreach ($list_code as $key => $_) {
+            $sum += intval($_) * $i--;
+        }
+        $mod = (int) $sum % 11;
+        if ($mod >= 2) {
+            $mod = 11 - $mod;
+        }
+        return $mod == $last;
+    }
+
 }
