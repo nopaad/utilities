@@ -1,0 +1,22 @@
+{
+	"name": "nopaad/utilities",
+	"type": "library",
+	"description": "A collection of php utilities.",
+	"homepage": "https://github.com/nopaad/utilities",
+	"license": "GNU",
+	"authors": [
+		{
+			"name": "Aria Radmand",
+			"email": "radmand@nopaad.ir",
+			"homepage": "http://ariaa.net",
+			"role": "Developer"
+		}
+	],
+	"minimum-stability": "stable",
+	"require": {},
+	"autoload": {
+		"psr-0": {
+			"Nopaad": "src"
+		}
+	}
+}
