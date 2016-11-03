@@ -2,7 +2,7 @@
 namespace Nopaad;
 class Utilities
 {
-	public static function userAgent()
+	static function userAgent()
 	{
 		$agent = @$_SERVER['HTTP_USER_AGENT'];
 		$output = '';
@@ -45,10 +45,7 @@ class Utilities
 		return 'datx-' . $output;
 	}
 
-	/*
-	 * test 2
-	 */
-	public static function persianNumberToFloat($string)
+	static function persianNumberToFloat($string)
 	{
 		$persian_digits_1 = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
 		$persian_digits_2 = ['٩', '٨', '٧', '٦', '٥', '٤', '٣', '٢', '١', '٠'];
@@ -61,7 +58,7 @@ class Utilities
 		return $output;
 	}
 
-    public static function checkNationalCode($code = '')
+    static function checkNationalCode($code = '')
     {
         $code = (string) preg_replace('/[^0-9]/', '', $code);
         if (strlen($code) > 10 or strlen($code) < 8) {
